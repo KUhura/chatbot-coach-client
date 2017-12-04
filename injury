@@ -1,0 +1,54 @@
+from time import *
+class colour:
+   '''This class defines all the colours and other adornments in the code for later use'''
+   
+   
+   CYAN = '\033[96m'
+   
+   BLUE = '\033[94m'
+   
+   YELLOW = '\033[93m'
+   
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
+
+
+print(colour.YELLOW + colour.BOLD + colour.UNDERLINE + " this program will test you for common training injuries and give you advice to solve them" + colour.END)
+
+sleep(2)
+a = input( colour.CYAN + colour.BOLD + "do you have any of these symptms,"+ colour.END+ "\n1) pain and numbness which is most commonly on one side of the body.\n2) Pain that extends to your arms or legs. \n3) Pain that worsens at night or with certain movements.?")
+if "yes" in a:
+  print("you have a disc injury so you should have some rest, gentle exersie and meditation")
+elif "no" in a:
+  print("go to question 2")
+else:
+  print("only yes or no answers")
+  
+sleep(2)
+  
+a = input( colour.CYAN + colour.BOLD + "\nHave you got any"+ colour.END+ "\n1) Pain \n2)Numbness \n3)muscle weakness associated with  apart of you body" )
+if "yes" in a:
+  print("\nYou have fasset joint injury so you should go to your local doctor and get pysical therapy treatment.") 
+elif "no" in a:
+  print("go to question 3")
+else:
+  print("only yes or no answers")
+  
+
+sleep(2) 
+
+print(colour.CYAN + colour.BOLD + "\nyou may have short term memory loss due to a concussion  when during your matches \nif you can't answer this question in less than 5 seconds."+ colour.END+"\nwhat did you have for brekfast last moring?")
+sleep(5)
+
+def MemoryTest(n):
+  '''Function which counts down from 5 to 0 to test memory lost.'''
+  if n <= 0:
+    sleep(1)
+    print("if you have not answered this question in time then go to your local GP for a check up")
+  else:
+    sleep(1)
+    print(n)
+    MemoryTest(n-1)#recursive function
+        
+MemoryTest(5)#ruturn function
